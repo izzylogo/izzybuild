@@ -1,0 +1,116 @@
+.learn-more{
+    max-width: 85%;
+    margin: 0px auto;
+}
+
+.learn-more-contain{
+    padding: 40px 0px;
+}
+
+.learn-more-box{
+    background-color: rgba(29, 22, 31, 1);
+    border-radius: 18px;
+    padding: 50px;
+    position: relative;
+}
+
+.learn-more-box h2{
+    font-size: 45px;
+    margin-bottom: 40px;
+    line-height: 70px;
+    font-weight: 400;
+}
+
+.learn-more-box h2 span{
+    color: rgba(186, 207, 208, 1);
+}
+
+.learn-more-box p{
+    max-width: 45%;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.learn-btn-cover{
+    position: absolute;
+    right: 20%;
+    bottom: -15px;
+    background-color: rgba(17, 9, 14, 1);
+    border-radius: 18px;
+    padding: 15px 20px;
+}
+
+.learn-btn-cover button{
+    background-color: transparent;
+    border: 2px solid rgba(228, 172, 180, 1);
+    color: rgba(228, 172, 180, 1);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: "Quicksand", sans-serif !important;
+    /* letter-spacing: 2px; */
+    font-weight: 600;
+}
+
+.learn-btn-svg-one{
+    position: absolute;
+    left: -29px;
+    top: 26px;
+    transform: rotate(180deg);
+}
+
+.learn-btn-svg-two{
+    position: absolute;
+    right: -29px;
+    top: 26px;
+    transform: rotate(270deg);
+}
+
+@media (max-width: 1000px) {
+
+    .learn-more-box h2{
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .learn-more-box p{
+        max-width: 85%;
+        font-weight: lighter;
+        font-size: 15px;
+        line-height: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .learn-more-box{
+        padding: 30px;
+    }
+
+    .learn-more-box h2{
+        font-size: 35px;
+        margin-bottom: 20px;
+        line-height: 50px;
+    }
+
+    .learn-more-box p{
+        max-width: 100%;
+        margin-bottom: 60px;
+    }
+
+    .learn-btn-cover{
+        margin-top: 20px;
+    }
+
+    .learn-btn-cover{
+        position: absolute;
+        right: 70px;
+        /* left: 0; */
+        width: fit-content;
+        bottom: -15px;
+        background-color: rgba(17, 9, 14, 1);
+        border-radius: 18px;
+        padding: 15px 20px;
+    }
+}

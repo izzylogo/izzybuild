@@ -1,0 +1,46 @@
+.preloader{
+    height: 100vh;
+    color: white;
+    background-color: rgba(17, 9, 14, 1);
+    position: fixed;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 55;
+}
+
+.demo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+    gap: 20px;
+}
+
+/* .splitText{
+    
+} */
+
+.splitText p{
+    display: inline-block;
+    color: #e2b3b9;
+    text-transform: capitalize;
+    font-weight: 800;
+    font-size: 25px;
+    letter-spacing: 5px;
+}
+
+/* .preload-logo{ */
+    /* transform: translateY(10px); */
+    /* opacity: 0; */
+/* } */
+
+.inner{
+    height: 260px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    gap: 20px;
+}

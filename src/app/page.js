@@ -1,95 +1,118 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client'
+
+import { useEffect, useState } from 'react';
+import Navbar from '@/components/Navbar';
+import HeroSection from "@/sections/HeroSection";
+import LearnMore from "@/components/LearnMore";
+import AboutSection from "@/sections/AboutSection";
+import ProjectSection from "@/sections/ProjectSection";
+import TestimonialSection from "@/sections/TestimonialSection";
+import ContactSection from "@/sections/ContactSection";
+import Footer from "@/components/Footer";
+import PreLoader from '@/components/PreLoader';
+import {gsap} from 'gsap'
+import { useGSAP } from '@gsap/react'
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const timeline = gsap.timeline({
+    repeatDelay: 1
+  });
+
+  useGSAP(() => {
+    timeline.to('.preloading', {
+      display: 'none', 
+      delay: 1,
+      duration: 3
+    })
+    timeline.from('#loadedSection', {
+      display: 'none',       
+    })
+  }, {})
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      
+        <div className="preloading">
+          <PreLoader />
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <div id='loadedSection'>
+          <Navbar />
+          <HeroSection />
+          <LearnMore />
+          <AboutSection />
+          <ProjectSection />
+          <TestimonialSection />
+          <ContactSection/>
+          <Footer/>
+        </div>
+    </div>
   );
 }
+
+// 'use client'
+
+// import { useEffect, useRef, useState } from 'react';
+
+
+// import Image from "next/image";
+// import styles from "./page.module.css";
+// import HeroSection from "@/sections/HeroSection";
+// import LearnMore from "@/components/LearnMore";
+// import AboutSection from "@/sections/AboutSection";
+// import ProjectSection from "@/sections/ProjectSection";
+// import TestimonialSection from "@/sections/TestimonialSection";
+// import ContactSection from "@/sections/ContactSection";
+// import Footer from "@/components/Footer";
+// import {gsap} from 'gsap'
+// import { useGSAP } from '@gsap/react'
+
+// // preloader
+// import PreLoader from '@/components/PreLoader';
+// import Navbar from '@/components/Navbar';
+
+// export default function Home() {
+
+
+//   const [loading, setLoading] = useState(false);
+
+//   const [showMain, setShowMain] = useState(false)
+ 
+//   useEffect(() => {
+//     const timer = setTimeout(() => {
+//       setLoading(false);
+//     }, 7000);
+
+//     return () => clearTimeout(timer);
+//   }, []);
+
+//   return (
+//     <div>
+//       {
+//         loading && <PreLoader id='preloadingSection' /> 
+//       }
+       
+      
+//         <div id='loadedSection'>
+//           <Navbar />
+//           <HeroSection />
+//           <LearnMore />
+//           <AboutSection />
+//           <ProjectSection />
+//           <TestimonialSection />
+//           <ContactSection/>
+//           <Footer/>
+//         </div>
+       
+//     </div>
+//   );
+// }

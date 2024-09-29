@@ -1,0 +1,33 @@
+.contact{
+    max-width: 85%;
+    margin: 0px auto;
+    margin-top: 80px;
+    padding: 10px ;
+}
+
+.cont-cover{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.cont-cover .contactImg{
+    border-radius: 60px;
+}
+
+.cont-cover h2{
+    font-weight: 400;
+    font-size: 56px;
+}
+
+@media (max-width: 800px) {
+    .contactImg{
+        width: 350px;
+    }
+
+    .cont-cover h2{
+        font-size: 35px;
+        text-align: center;
+    }
+}
